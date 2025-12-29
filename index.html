@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>李良桂医生 - 个人介绍</title>
+    <style>
+        /* 全局样式：清除默认边距，统一字体，医疗类浅色系 */
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: "微软雅黑", "Helvetica Neue", sans-serif;
+            box-sizing: border-box;
+        }
+
+        /* 页面背景：浅蓝灰色，柔和专业 */
+        body {
+            background-color: #f0f7fb;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* 容器：限制宽度，居中，白色背景 */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* 医生信息区域 */
+        .doctor-info {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            display: flex;
+            flex-wrap: wrap; /* 适配手机，自动换行 */
+            gap: 30px; /* 照片和文字间距 */
+            align-items: center;
+        }
+
+        /* 医生照片 */
+        .doctor-photo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%; /* 圆形照片 */
+            overflow: hidden;
+            border: 5px solid #e8f4f8;
+            flex-shrink: 0; /* 防止照片缩小 */
+        }
+
+        .doctor-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 照片不拉伸 */
+        }
+
+        /* 医生简介文字 */
+        .doctor-text {
+            flex: 1; /* 占剩余宽度 */
+            min-width: 300px; /* 手机端最小宽度 */
+        }
+
+        .doctor-text h1 {
+            color: #1a73e8; /* 医疗蓝标题 */
+            margin-bottom: 15px;
+            font-size: 28px;
+        }
+
+        .doctor-text p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        /* 就诊图片区域标题 */
+        .photos-title {
+            font-size: 22px;
+            color: #1a73e8;
+            margin-bottom: 20px;
+            padding-left: 10px;
+            border-left: 4px solid #1a73e8;
+        }
+
+        /* 图片滑动容器：横向滚动，适配手机 */
+        .photos-scroll {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+            overflow-x: auto; /* 横向滚动 */
+            white-space: nowrap; /* 图片不换行 */
+            -webkit-overflow-scrolling: touch; /* 手机顺滑滚动 */
+        }
+
+        /* 隐藏滚动条（美观，不影响功能） */
+        .photos-scroll::-webkit-scrollbar {
+            height: 6px;
+        }
+        .photos-scroll::-webkit-scrollbar-thumb {
+            background: #ddd;
+            border-radius: 3px;
+        }
+
+        /* 就诊图片样式 */
+        .patient-photo {
+            width: 300px;
+            height: 200px;
+            display: inline-block;
+            margin-right: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .patient-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s; /* 鼠标hover放大效果 */
+        }
+
+        .patient-photo img:hover {
+            transform: scale(1.05); /* 放大5% */
+        }
+
+        /* 手机端适配 */
+        @media (max-width: 768px) {
+            .doctor-info {
+                flex-direction: column; /* 手机端照片在上，文字在下 */
+                text-align: center;
+            }
+            .patient-photo {
+                width: 250px;
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 医生信息区域：照片+简介 -->
+        <div class="doctor-info">
+            <div class="doctor-photo">
+                <!-- 替换成医生照片，路径是images/doctor.jpg -->
+                <img src="images/doctor.jpg" alt="李良桂医生">
+            </div>
+            <div class="doctor-text">
+                <h1>李良桂 医生</h1>
+                <p>【职称】：主治医师</p>
+                <p>【擅长领域】：请替换为医生擅长的领域，如：消化内科常见疾病（胃炎、胃溃疡、肠炎）的诊断与治疗，慢性病管理等</p>
+                <p>【从业年限】：请替换为真实年限，如：15年临床诊疗经验</p>
+                <p>【个人简介】：请替换为医生详细简介，如：毕业于XX医科大学，曾在XX三甲医院进修，专注于消化内科疾病的精准诊疗，注重患者个性化治疗方案制定，累计服务患者超10000例，深受患者好评。</p>
+                <p>【坐诊时间】：请替换为真实时间，如：周一至周五 8:00-17:00（周三下午休息）</p>
+            </div>
+        </div>
+
+        <!-- 患者就诊图片滑动区域 -->
+        <h2 class="photos-title">诊室就诊案例参考</h2>
+        <div class="photos-scroll">
+            <!-- 就诊图片1：替换为真实图片，路径images/patient1.jpg -->
+            <div class="patient-photo">
+                <img src="images/patient1.jpg" alt="就诊案例1">
+            </div>
+            <!-- 就诊图片2 -->
+            <div class="patient-photo">
+                <img src="images/patient2.jpg" alt="就诊案例2">
+            </div>
+            <!-- 就诊图片3 -->
+            <div class="patient-photo">
+                <img src="images/patient3.jpg" alt="就诊案例3">
+            </div>
+            <!-- 如需添加更多图片，复制上面的div，改patient4、patient5即可 -->
+            <!-- <div class="patient-photo">
+                <img src="images/patient4.jpg" alt="就诊案例4">
+            </div> -->
+        </div>
+    </div>
+</body>
+</html>
